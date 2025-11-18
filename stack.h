@@ -13,7 +13,6 @@ public:
     ~Stack();
 };
 
-
 void Stack::push(int x){
   NodePtr new_node =new NODE(x);
   if(new_node){
@@ -28,9 +27,9 @@ int Stack::pop(){
         if(t!=NULL){
         int value;
         value=t->get_value();
-        top->get_next();      // move top to the next one
-        --size;               //decrease the size
-        delete t; 
+        top=t->get_next();      // move top to the next one
+         delete t;
+        --size;               //decrease the size 
         return value;
         }
         cout<<"Empty stack"<<endl;
@@ -40,18 +39,16 @@ int Stack::pop(){
 Stack::Stack(){
     top=NULL;
     size=0;
-    
 }
+
 Stack::~Stack(){
     //delete all remaning stack (i.e. pop all) 
-    cout<<"Clear the stack";
+    cout<<"Clear the stack"<<endl;
     int n=size;
     while(n>0){
         pop();
-        n--;
+        --n;
     }
-    
 }
-
 
 #endif
