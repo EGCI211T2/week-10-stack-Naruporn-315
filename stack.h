@@ -20,6 +20,9 @@ void Stack::push(int x){
         top=new_node;            //change top
         size++;                  //increase size
    }
+   else{
+       cout<<"Stack push error: memory allocation failed"<<endl;
+   }
 }
 
 int Stack::pop(){

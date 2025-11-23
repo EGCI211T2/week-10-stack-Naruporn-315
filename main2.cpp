@@ -5,6 +5,7 @@ using namespace std;
 
 int main(int argc, char **argv){
     Stack s;
+    int i,j;
    
 /*
   Exercise 2
@@ -12,17 +13,19 @@ int main(int argc, char **argv){
 
    */
 
-    /*
+    for(i=0;i<argc;i++){
      for(j=0;j<strlen(argv[i]);j++){
-       // Use stack to help with the parentheses
-
-
-
-
-
+       Stack s; //change node to char-->****
+        if(argv[i]=='[' || argv[i][j]=='{')  
+          s.push(argv[i][j]);
+        else {
+          if (argv[i]==']' || argv[i][j]=='}')   {
+              char x=s.pop();
+            
+        }
+     }
+    }
   }
-
-  */
 
 
    return 0;
